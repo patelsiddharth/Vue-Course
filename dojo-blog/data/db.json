@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Welcome to new blog",
+      "body": "Losem reisa posret 1 asda Losem reisa posret 1 asda Losem reisa posret 1 asda",
+      "tags": [
+        "webdev",
+        "coding",
+        "news"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Top 5 CSS tips",
+      "body": "Losem reisa posret 1 asda Losem reisa posret 1 asda Losem reisa posret 1 asda",
+      "tags": [
+        "css",
+        "coding",
+        "stylying"
+      ]
+    },
+    {
+      "title": "test",
+      "body": "test",
+      "tags": [
+        "css",
+        "test"
+      ],
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Basics</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script>
+        window.onSpotifyWebPlaybackSDKReady = () => {
+            const play = ({
+                spotify_uri,
+                playerInstance: {
+                    _options: { getOAuthToken, id}
+                }
+            }) => {
+            getOAuthToken(access_token => {
+                fetch(`https://api.spotify.com/v1/me/player/play?device_id=${id}`, {
+                method: 'PUT',
+                body: JSON.stringify({ uris: [spotify_uri] }),
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${access_token}`
+                },
+                });
+            });
+            };
+
+            play({
+            playerInstance: new Spotify.Player({ 
+                name: "Carly Rae Jepsen Player",
+                getOAuthToken: callback => {
+                    // Run code to get a fresh access token
+
+                    callback('9750c8e4bb9f4e76b7d2277fe95a4e81');
+                },
+                volume: 0.5 
+            }),
+            spotify_uri: 'spotify:track:7xGfFoTpQ2E7fRF5lN10tr',
+            });
+        };
+        </script>
+    <style>
+        .canvas
+        {
+            width: 300px;
+            height: 200px;
+            margin-top: 20px;
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vue Basic</h1>
+    <div id="app">
+        {{title}} <br>
+        {{greeting()}}
+        <p>
+            Counter : {{counter}}
+        </p>
+        <button v-on:click="Decrement">-</button>
+        <button @click="Reset">Reset</button>
+        <button v-on:click="Increment">+</button>
+        <div class="canvas" @mousemove="logCoords">
+            {{coOrds.x}}, {{coOrds.y}}
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
