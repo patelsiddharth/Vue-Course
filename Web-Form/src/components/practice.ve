@@ -1,0 +1,19 @@
+data()
+{
+    return {
+        names : []
+    }
+}
+
+<div>
+    <input type="checkbox" value="Shaun" id="sh" v-model="names">
+    <label for="sh">Shaun</label>
+</div>
+<div>
+    <input type="checkbox" value="Yoshi" id="yo" v-model="names">
+    <label for="yo">Yoshi</label>
+</div>
+<div>
+    <input type="checkbox" id="mr" value="Mario" v-model="names">
+    <label for="mr">Mario</label>
+</div>
