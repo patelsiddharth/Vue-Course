@@ -1,0 +1,16 @@
+{
+  "projects": [
+    {
+      "id": 2,
+      "title": "Make marketing email",
+      "details": "Lorem marketing email",
+      "completed": true
+    },
+    {
+      "title": "New Project",
+      "details": "Some random project",
+      "completed": true,
+      "id": 3
+    }
+  ]
+}
